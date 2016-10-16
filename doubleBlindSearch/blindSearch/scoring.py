@@ -1,5 +1,3 @@
-from math import exp
-
 n = "n"
 mean = "mean"
 points = {"bing":{mean:0, n:0},
