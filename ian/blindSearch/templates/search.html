@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %} Search {% endblock %}
+
+{% block content %}
+<h1>Searching for "{{ query }}"</h1>
+
+{% for engine in engines %}
+<h3>{{engine.name}}</h3>
+<ol>
+  {% for link in engine.links %}
+  <li><a href="{{ link }}">{{ link }}</a></li>
+  {% endfor %}
+</ol>
+{% endfor %}
+{% endblock %}
