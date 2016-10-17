@@ -5,6 +5,10 @@
 {% block content %}
 <form method="get" action="/search">
   <input type="text" name="q" width="75" placeholder="query" autofocus>
-  <input type="submit" text="search">
+  <input type="submit" value="Search">
+</form>
+<form method="get" action="/trial">
+  <input type="text" name="q" width="75" placeholder="query" autofocus>
+  <input type="submit" value="Trial">
 </form>
 {% endblock %}

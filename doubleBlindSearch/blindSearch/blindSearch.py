@@ -28,5 +28,14 @@ def search():
     return render_template('search.html', **data)
 
 
+@app.route('/trial')
+def trial():
+    query = request.args.get('q', False)
+    if not query:
+        return redirect(url_for('landing'))
+
+    return render_template('trial.html', query=query)
+
+
 if __name__ == "__main__":
     app.run(debug=True)
