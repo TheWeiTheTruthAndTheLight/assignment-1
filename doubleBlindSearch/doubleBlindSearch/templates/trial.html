@@ -3,7 +3,21 @@
 {% block title %} Home {% endblock %}
 
 {% block content %}
-<h1>Trial</h1>
+<h1>Trial {{ trialNumber }}</h1>
+<p>Current means</p>
+<table>
+  <tr>
+    <th>Bing</th>
+    <th>Google</th>
+    <th>Yahoo</th>
+  </tr>
+  <tr>
+    <td>{{ meanBing }}</td>
+    <td>{{ meanGoogle }}</td>
+    <td>{{ meanYahoo }}</td>
+  </tr>
+</table>
+
 <form method="post" action="">
   <input type="text" name="query" value="">
 
