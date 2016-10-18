@@ -4,9 +4,7 @@
 
 {% block content %}
 <h1>Home</h1>
-<form method="post" action="">
-    {{ form.query.label }} {{ form.query(size=20) }}
-    {{ form.hidden_tag() }}
+<form method="post" action="/trial">
     <input type="submit" value="Search">
 </form>
 {% endblock %}
