@@ -6,9 +6,11 @@ from .helpers import defaultFields
 
 @app.route('/', methods=('GET',))
 def index():
-    return render_template('index.html')
+    return render_template('index.html', **defaultFields)
 
 
 @app.route('/trial', methods=('POST',))
 def trial():
-    return render_template('trial.html')
+    data = request.form.to_dict(flat=True)
+
+    return render_template('trial.html', **data)

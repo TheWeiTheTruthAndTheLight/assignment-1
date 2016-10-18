@@ -7,16 +7,16 @@
 <form method="post" action="/trial">
   <input type="text" name="query" value="">
 
-  <input type="hidden" name="valueA"      value="0">
-  <input type="hidden" name="valueB"      value="0">
-  <input type="hidden" name="valueC"      value="0">
-  <input type="hidden" name="nameA"       value="Bing">
-  <input type="hidden" name="nameB"       value="Google">
-  <input type="hidden" name="nameC"       value="Yahoo">
-  <input type="hidden" name="meanBing"    value="0">
-  <input type="hidden" name="meanGoogle"  value="0">
-  <input type="hidden" name="meanYahoo"   value="0">
-  <input type="hidden" name="trialNumber" value="0">
+  <input type="hidden" name="valueA"      value="{{ valueA      }}">
+  <input type="hidden" name="valueB"      value="{{ valueB      }}">
+  <input type="hidden" name="valueC"      value="{{ valueC      }}">
+  <input type="hidden" name="nameA"       value="{{ nameA       }}">
+  <input type="hidden" name="nameB"       value="{{ nameB       }}">
+  <input type="hidden" name="nameC"       value="{{ nameC       }}">
+  <input type="hidden" name="meanBing"    value="{{ meanBing    }}">
+  <input type="hidden" name="meanGoogle"  value="{{ meanGoogle  }}">
+  <input type="hidden" name="meanYahoo"   value="{{ meanYahoo   }}">
+  <input type="hidden" name="trialNumber" value="{{ trialNumber }}">
 
   <input type="submit" value="Search">
 </form>
