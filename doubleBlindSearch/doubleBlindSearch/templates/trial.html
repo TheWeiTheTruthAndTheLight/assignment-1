@@ -4,4 +4,14 @@
 
 {% block content %}
 <h1>Trial</h1>
+<form method="post" action="">
+    {{ form.query.label }} {{ form.query }}
+
+    {{ form.valueA.label }} {{ form.valueA }}
+    {{ form.valueB.label }} {{ form.valueB }}
+    {{ form.valueC.label }} {{ form.valueC }}
+
+    {{ form.hidden_tag() }}
+    <input type="submit" value="Search">
+</form>
 {% endblock %}
