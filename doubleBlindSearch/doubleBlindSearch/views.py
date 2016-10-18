@@ -1,11 +1,16 @@
-from flask import render_template
+from flask import render_template, redirect, url_for
 
 from . import app
+from .forms import InitialSearchForm
 
 
-@app.route('/')
+@app.route('/', methods=('GET', 'POST'))
 def index():
-    return render_template('index.html')
+    form = InitialSearchForm()
+    if form.validate_on_submit():
+        return redirect(url_for('trial'))
+
+    return render_template('index.html', form=form)
 
 
 @app.route('/trial')
