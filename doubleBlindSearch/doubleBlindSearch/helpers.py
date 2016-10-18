@@ -64,5 +64,5 @@ def updateMeansLabelsAndFields(fields):
       'meanYahoo'  : newMeans['Yahoo'],
       'trialNumber': int(fields['trialNumber']) + 1,
     }
-    newFields['valueC'] = 1000
+
     return newFields
