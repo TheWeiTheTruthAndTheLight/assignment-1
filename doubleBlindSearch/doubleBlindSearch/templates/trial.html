@@ -3,9 +3,10 @@
 {% block title %} Home {% endblock %}
 
 {% block content %}
-<h1>Trial {{ trialNumber }}</h1>
-<p>Current means</p>
+<h2>Summary of previous trials</h2>
+<p><em>Number of trials completed:</em> {{ trialNumber }}</p>
 <table>
+  <caption>Scores by search engine</caption>
   <tr>
     <th>Bing</th>
     <th>Google</th>
@@ -18,12 +19,12 @@
   </tr>
 </table>
 
+<hr>
+<h2>Current trial</h2>
 <form method="post" action="">
-  <input type="text" name="query" value="">
-
-  <label for="valueA">Engine A</label><input type="text" name="valueA" id="valueA" value="{{ valueA }}">
-  <label for="valueB">Engine B</label><input type="text" name="valueB" id="valueB" value="{{ valueB }}">
-  <label for="valueC">Engine C</label><input type="text" name="valueC" id="valueC" value="{{ valueC }}">
+  <label for="valueA">Engine A</label><input type="text" name="valueA" id="valueA" size="1" value="{{ valueA }}"><br>
+  <label for="valueB">Engine B</label><input type="text" name="valueB" id="valueB" size="1" value="{{ valueB }}"><br>
+  <label for="valueC">Engine C</label><input type="text" name="valueC" id="valueC" size="1" value="{{ valueC }}">
 
   <input type="hidden" name="nameA"       value="{{ nameA }}">
   <input type="hidden" name="nameB"       value="{{ nameB }}">
@@ -33,6 +34,9 @@
   <input type="hidden" name="meanYahoo"   value="{{ meanYahoo }}">
   <input type="hidden" name="trialNumber" value="{{ trialNumber }}">
 
+  <hr>
+  <h2>Next trial</h2>
+  <input type="text" name="query" value="" placeholder="Query">
   <input type="submit" value="Search">
 </form>
 {% endblock %}
