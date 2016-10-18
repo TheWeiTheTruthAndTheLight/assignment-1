@@ -11,15 +11,15 @@ def index():
 
 @app.route('/trial', methods=('POST',))
 def trial():
-    data = request.form.to_dict(flat=True)
-    query = data['query']
+    fields = request.form.to_dict(flat=True)
+    query = fields['query']
 
     # If form is valid
-    if float(data['valueA']) != 0.0:
+    if float(fields['valueA']) != 0.0:
         # Process form
-        data = updateMeansLabelsAndFields(data)
+        stats = updateMeansLabelsAndFields(fields)
     else:
-        # Display default field values
-        data = defaultFields
+        # Display current field values
+        stats = fields
 
-    return render_template('trial.html', query=query, **data)
+    return render_template('trial.html', query=query, stats=stats)

@@ -4,7 +4,7 @@
 
 {% block content %}
 <h2>Summary of previous trials</h2>
-<p><em>Number of trials completed:</em> {{ trialNumber }}</p>
+<p><em>Number of trials completed:</em> {{ stats.trialNumber }}</p>
 <table>
   <caption>Scores by search engine</caption>
   <tr>
@@ -13,9 +13,9 @@
     <th>Yahoo</th>
   </tr>
   <tr>
-    <td>{{ meanBing }}</td>
-    <td>{{ meanGoogle }}</td>
-    <td>{{ meanYahoo }}</td>
+    <td>{{ stats.meanBing }}</td>
+    <td>{{ stats.meanGoogle }}</td>
+    <td>{{ stats.meanYahoo }}</td>
   </tr>
 </table>
 
@@ -26,17 +26,17 @@
 <h4>Engine B</h4>
 <h4>Engine C</h4>
 <form method="post" action="">
-  <label for="valueA">Engine A</label><input type="text" name="valueA" id="valueA" size="1" value="{{ valueA }}"><br>
-  <label for="valueB">Engine B</label><input type="text" name="valueB" id="valueB" size="1" value="{{ valueB }}"><br>
-  <label for="valueC">Engine C</label><input type="text" name="valueC" id="valueC" size="1" value="{{ valueC }}">
+  <label for="valueA">Engine A</label><input type="text" name="valueA" id="valueA" size="1" value="{{ stats.valueA }}"><br>
+  <label for="valueB">Engine B</label><input type="text" name="valueB" id="valueB" size="1" value="{{ stats.valueB }}"><br>
+  <label for="valueC">Engine C</label><input type="text" name="valueC" id="valueC" size="1" value="{{ stats.valueC }}">
 
-  <input type="hidden" name="nameA"       value="{{ nameA }}">
-  <input type="hidden" name="nameB"       value="{{ nameB }}">
-  <input type="hidden" name="nameC"       value="{{ nameC }}">
-  <input type="hidden" name="meanBing"    value="{{ meanBing }}">
-  <input type="hidden" name="meanGoogle"  value="{{ meanGoogle }}">
-  <input type="hidden" name="meanYahoo"   value="{{ meanYahoo }}">
-  <input type="hidden" name="trialNumber" value="{{ trialNumber }}">
+  <input type="hidden" name="nameA"       value="{{ stats.nameA }}">
+  <input type="hidden" name="nameB"       value="{{ stats.nameB }}">
+  <input type="hidden" name="nameC"       value="{{ stats.nameC }}">
+  <input type="hidden" name="meanBing"    value="{{ stats.meanBing }}">
+  <input type="hidden" name="meanGoogle"  value="{{ stats.meanGoogle }}">
+  <input type="hidden" name="meanYahoo"   value="{{ stats.meanYahoo }}">
+  <input type="hidden" name="trialNumber" value="{{ stats.trialNumber }}">
 
   <hr>
   <h2>Next trial</h2>
