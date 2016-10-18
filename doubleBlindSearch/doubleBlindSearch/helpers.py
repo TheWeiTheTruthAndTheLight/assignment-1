@@ -41,8 +41,8 @@ def updateMeans(fields):
     }
 
     for label in labelToNames:
-        initialMean = int(means[labelToNames[label]])
-        intialTrialNumber = int(fields['trialNumber'])
+        initialMean = int(float(means[labelToNames[label]]))
+        intialTrialNumber = int(float(fields['trialNumber']))
         newMean = ((initialMean * intialTrialNumber) + int(values[label])) / (intialTrialNumber + 1)
         means[labelToNames[label]] = newMean
 
