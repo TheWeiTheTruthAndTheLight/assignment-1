@@ -2,11 +2,12 @@ from flask import render_template, redirect, request, url_for
 
 from . import app
 from .forms import InitialSearchForm, TrialForm
+from .helpers import defaultFields
 
 
 @app.route('/', methods=('GET', 'POST'))
 def index():
-    form = InitialSearchForm()
+    form = InitialSearchForm(**defaultFields)
     if form.validate_on_submit():
         return redirect(url_for('trial'), code=307)
 

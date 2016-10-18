@@ -5,8 +5,8 @@
 {% block content %}
 <h1>Home</h1>
 <form method="post" action="">
-    {{ form.csrf_token }}
     {{ form.query.label }} {{ form.query(size=20) }}
+    {{ form.hidden_tag() }}
     <input type="submit" value="Search">
 </form>
 {% endblock %}
