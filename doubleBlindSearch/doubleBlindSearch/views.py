@@ -16,16 +16,10 @@ def index():
 
 @app.route('/trial', methods=('POST',))
 def trial():
-    # Retrieve current query
-    try:
-        current_query = request.form['query']
-    except KeyError:
-        return redirect(url_for('index'))
-
     form = TrialForm()
 
     # Advance to next trial (if form is valid)
     if form.validate_on_submit():
         return redirect('/success')
 
-    return render_template('trial.html', form=form, current_query=current_query)
+    return render_template('trial.html', form=form)
