@@ -11,5 +11,4 @@ def index():
 
 @app.route('/trial', methods=('POST',))
 def trial():
-
     return render_template('trial.html')

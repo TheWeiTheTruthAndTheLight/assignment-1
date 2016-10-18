@@ -5,6 +5,20 @@
 {% block content %}
 <h1>Trial</h1>
 <form method="post" action="">
-    <input type="submit" value="Search">
+  <input type="text" name="query" value="">
+
+  <label for="valueA">Engine A</label><input type="text" name="valueA" id="valueA" value="0">
+  <label for="valueB">Engine B</label><input type="text" name="valueB" id="valueB" value="0">
+  <label for="valueC">Engine C</label><input type="text" name="valueC" id="valueC" value="0">
+
+  <input type="hidden" name="nameA"       value="Bing">
+  <input type="hidden" name="nameB"       value="Google">
+  <input type="hidden" name="nameC"       value="Yahoo">
+  <input type="hidden" name="meanBing"    value="0">
+  <input type="hidden" name="meanGoogle"  value="0">
+  <input type="hidden" name="meanYahoo"   value="0">
+  <input type="hidden" name="trialNumber" value="0">
+
+  <input type="submit" value="Search">
 </form>
 {% endblock %}
