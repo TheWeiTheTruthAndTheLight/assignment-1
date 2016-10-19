@@ -52,8 +52,8 @@ def updateMeans(fields, scoreFormulaConstant):
     }
 
     for label in labelToNames:
-        initialMean = int(float(means[labelToNames[label]]))
-        intialTrialNumber = int(float(fields['trialNumber']))
+        initialMean = float(means[labelToNames[label]])
+        intialTrialNumber = float(fields['trialNumber'])
         trialScore = 1 / pow(scoreFormulaConstant, int(values[label]) - 1)
         newMean = ((initialMean * intialTrialNumber) + trialScore) / (intialTrialNumber + 1)
         means[labelToNames[label]] = newMean
