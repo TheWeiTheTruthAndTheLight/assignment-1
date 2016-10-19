@@ -13,9 +13,9 @@
     <th>Yahoo</th>
   </tr>
   <tr>
-    <td>{{ stats.meanBing }}</td>
-    <td>{{ stats.meanGoogle }}</td>
-    <td>{{ stats.meanYahoo }}</td>
+    <td>{{ stats.meanBing  | float | round(3) }}</td>
+    <td>{{ stats.meanGoogle| float | round(3) }}</td>
+    <td>{{ stats.meanYahoo | float | round(3) }}</td>
   </tr>
 </table>
 
