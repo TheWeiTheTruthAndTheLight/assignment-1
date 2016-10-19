@@ -13,13 +13,14 @@ def index():
 def trial():
     fields = request.form.to_dict(flat=True)
     query = fields['query']
+    scoreFormulaConstant = 1.15
     resultsCount = 5
     results = searchAndCollect(query, fields, resultsCount)
 
     # If form is valid
     if float(fields['valueA']) != 0.0:
         # Process form
-        stats = updateMeansLabelsAndFields(fields)
+        stats = updateMeansLabelsAndFields(fields, scoreFormulaConstant)
     else:
         # Display current field values
         stats = fields
