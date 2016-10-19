@@ -1,5 +1,7 @@
 from random import shuffle
 
+from .searchResults import search
+
 
 defaultFields = {
   'valueA'     : 0,
@@ -13,6 +15,15 @@ defaultFields = {
   'meanYahoo'  : 0,
   'trialNumber': 0,
 }
+
+
+def searchAndCollect(query, fields):
+    results = search(query)
+    return {
+        'resultsA': results[fields['nameA']],
+        'resultsB': results[fields['nameB']],
+        'resultsC': results[fields['nameC']],
+    }
 
 
 def shuffleLabels():

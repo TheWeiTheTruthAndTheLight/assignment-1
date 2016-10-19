@@ -22,9 +22,28 @@
 <hr>
 <h2>Current trial</h2>
 <p><em>Query:</em> {{ query }}</p>
+
 <h4>Engine A</h4>
+<ol>
+{% for link in results.resultsA %}
+  <li><a href="{{ link }}">{{ link }}</a></li>
+{% endfor %}
+</ol>
+
 <h4>Engine B</h4>
+<ol>
+{% for link in results.resultsB %}
+  <li><a href="{{ link }}">{{ link }}</a></li>
+{% endfor %}
+</ol>
+
 <h4>Engine C</h4>
+<ol>
+{% for link in results.resultsC %}
+  <li><a href="{{ link }}">{{ link }}</a></li>
+{% endfor %}
+</ol>
+
 <form method="post" action="">
   <label for="valueA">Engine A</label><input type="text" name="valueA" id="valueA" size="1" value="{{ stats.valueA }}"><br>
   <label for="valueB">Engine B</label><input type="text" name="valueB" id="valueB" size="1" value="{{ stats.valueB }}"><br>
