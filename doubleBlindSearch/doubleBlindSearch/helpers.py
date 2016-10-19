@@ -34,7 +34,7 @@ def shuffleLabels():
     return dict(zip(labels, names))
 
 
-def updateMeans(fields, scoreFormulaConstant):
+def updateMeans(fields, resultsCount, scoreFormulaConstant):
     labelToNames = {
         'a': fields['nameA'],
         'b': fields['nameB'],
@@ -52,17 +52,24 @@ def updateMeans(fields, scoreFormulaConstant):
     }
 
     for label in labelToNames:
+        # Validate value, compute trial score
+        value = int(values[label])
+        if (value < 1) or (value > resultsCount):
+            trialScore = 0
+        else:
+            trialScore = 1 / pow(scoreFormulaConstant, value - 1)
+
+        # Update mean
         initialMean = float(means[labelToNames[label]])
         intialTrialNumber = float(fields['trialNumber'])
-        trialScore = 1 / pow(scoreFormulaConstant, int(values[label]) - 1)
         newMean = ((initialMean * intialTrialNumber) + trialScore) / (intialTrialNumber + 1)
         means[labelToNames[label]] = newMean
 
     return means
 
 
-def updateMeansLabelsAndFields(fields, scoreFormulaConstant):
-    newMeans = updateMeans(fields, scoreFormulaConstant)
+def updateMeansLabelsAndFields(fields, resultsCount, scoreFormulaConstant):
+    newMeans = updateMeans(fields, resultsCount, scoreFormulaConstant)
     newLabels = shuffleLabels()
     newFields = {
       'valueA'     : 0,

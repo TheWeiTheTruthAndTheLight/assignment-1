@@ -20,7 +20,7 @@ def trial():
     # If form is valid
     if float(fields['valueA']) != 0.0:
         # Process form
-        stats = updateMeansLabelsAndFields(fields, scoreFormulaConstant)
+        stats = updateMeansLabelsAndFields(fields, resultsCount, scoreFormulaConstant)
     else:
         # Display current field values
         stats = fields
