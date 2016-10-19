@@ -17,12 +17,12 @@ defaultFields = {
 }
 
 
-def searchAndCollect(query, fields):
+def searchAndCollect(query, fields, resultsCount):
     results = search(query)
     return {
-        'resultsA': results[fields['nameA']],
-        'resultsB': results[fields['nameB']],
-        'resultsC': results[fields['nameC']],
+        'resultsA': results[fields['nameA']][:resultsCount],
+        'resultsB': results[fields['nameB']][:resultsCount],
+        'resultsC': results[fields['nameC']][:resultsCount],
     }
 
 

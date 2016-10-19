@@ -13,7 +13,8 @@ def index():
 def trial():
     fields = request.form.to_dict(flat=True)
     query = fields['query']
-    results = searchAndCollect(query, fields)
+    resultsCount = 5
+    results = searchAndCollect(query, fields, resultsCount)
 
     # If form is valid
     if float(fields['valueA']) != 0.0:
